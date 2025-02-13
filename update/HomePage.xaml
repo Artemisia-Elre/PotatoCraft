@@ -1,0 +1,32 @@
+﻿<local:MyCard Title=" " CanSwap="True" Margin="0,0,0,0" IsSwaped="False">
+    <StackPanel Margin="25,40,23,15" >
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Image Height="88" HorizontalAlignment="Left" Source="https://raw.gitmirror.com/Artemisia-Elre/PotatoCraft/refs/heads/master/update/launcher/PotatoCraft.png" />
+        </StackPanel>
+        </StackPanel>
+</local:MyCard>
+
+
+
+<local:MyCard Title="公告" CanSwap="True" Margin="0,15,0,15" IsSwaped="False">
+    <StackPanel Margin="25,40,23,15">
+    <TextBlock Margin="0,0,0,4" Text="欢迎来到PotatoCraft" />
+    <TextBlock Margin="0,0,0,4" Text="服务器ip: ym.rainplay.cn:23983" />
+    <TextBlock Margin="0,0,0,4" Text="服务器备用ip：ymt.rainplay.cn:23983" />
+    <TextBlock Margin="0,0,0,4" Text="内测时间为一个月，大家可以自由享受这段时光的探索之旅！" />
+    <TextBlock Margin="0,0,0,4" Text="有bug或者体验不佳联系QQ：3753803877" />
+    <TextBlock Margin="0,0,0,4" Text="有想加的模组或者更新内容联系QQ：3753803877" />
+    </StackPanel>
+</local:MyCard>
+
+
+
+
+<local:MyCard Title="PotatoCraft游戏启动" CanSwap="True" Margin="0,15,0,15" IsSwaped="False">
+    <StackPanel Margin="25,40,23,15" Orientation="Horizontal">
+        <local:MyButton Margin="0,4,10,0" Width="160" Height="35"
+                Text="主要地址" EventType="启动游戏" EventData="1.20.1|ym.rainplay.cn:23983" ToolTip="服务器 IP: ym.rainplay.cn:23983" />
+        <local:MyButton Margin="130,4,0,0" Width="160" Height="35"
+                Text="备用地址" EventType="启动游戏" EventData="1.20.1|ymt.rainplay.cn:23983" ToolTip="服务器 IP: ymt.rainplay.cn:23983" />
+    </StackPanel>
+</local:MyCard>
