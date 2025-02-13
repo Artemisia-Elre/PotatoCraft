@@ -2,7 +2,6 @@ package net.artemisitor.server.api.manager
 
 object URLManager {
     const val PACK = "https://github.tbedu.top/https://github.com/Artemisia-Elre/PotatoCraft/raw/refs/heads/master/update/launcher/modpack/pack.zip"
-    const val LAUNCHER = "https://github.tbedu.top/https://github.com/Artemisia-Elre/PotatoCraft/raw/refs/heads/master/update/launcher/executable/"
     private const val GITHUB = "https://raw.gitmirror.com/Artemisia-Elre/PotatoCraft/refs/heads/master"
     fun getGithubUrl(value : String): String{
         return "$GITHUB$value"

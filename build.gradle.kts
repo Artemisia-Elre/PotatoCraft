@@ -17,3 +17,7 @@ dependencies {
 application{
     mainClass = "net.artemisitor.server.Main"
 }
+
+tasks.withType<JavaCompile> {
+    options.encoding = "UTF-8"
+}
