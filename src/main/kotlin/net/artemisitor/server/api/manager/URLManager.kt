@@ -1,9 +1,11 @@
 package net.artemisitor.server.api.manager
 
 object URLManager {
-    private const val GITEE = "https://gitee.com/aile123/PotatoCraft/raw/master/"
-    fun getGiteeUrl(value : String): String{
-        return GITEE + value
+    const val PACK = "https://github.tbedu.top/https://github.com/Artemisia-Elre/PotatoCraft/raw/refs/heads/master/update/launcher/modpack/pack.zip"
+    const val LAUNCHER = "https://github.tbedu.top/https://github.com/Artemisia-Elre/PotatoCraft/raw/refs/heads/master/update/launcher/executable/"
+    private const val GITHUB = "https://raw.gitmirror.com/Artemisia-Elre/PotatoCraft/refs/heads/master"
+    fun getGithubUrl(value : String): String{
+        return "$GITHUB$value"
     }
     private const val FORGER = "https://www.curseforge.com/api/v1/mods/{projectID}/files/{fileID}/download"
     fun getForgeUrl(project : String,file : String): String{
