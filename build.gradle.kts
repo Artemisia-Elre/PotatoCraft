@@ -13,6 +13,12 @@ dependencies {
     implementation(kotlin("stdlib"))
     implementation("com.squareup.okhttp3:okhttp:4.9.2")
     implementation("com.google.code.gson:gson:2.8.9")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1")
+    implementation("io.ktor:ktor-client-core:2.3.12")
+    implementation("org.slf4j:slf4j-simple:1.7.36")
+    implementation("io.ktor:ktor-client-cio:2.3.12")
+    testImplementation(kotlin("test"))
 }
 application{
     mainClass = "net.artemisitor.server.Main"

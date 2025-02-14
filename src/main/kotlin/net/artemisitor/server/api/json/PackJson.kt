@@ -1,8 +1,6 @@
 package net.artemisitor.server.api.json
 
 class PackJson {
-    data class Version(val string: String)
-    
     data class ModLoader(
         val id: String,
         val primary: Boolean
