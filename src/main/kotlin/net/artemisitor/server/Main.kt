@@ -42,15 +42,13 @@ class Main {
                         it.mkdirs()
                     }
                 }.absolutePath)
-                File("PCL.zip").delete()
-            }else{
-                File("PCL.zip").delete()
             }
             if (version == null || internet.version != version) {
                 DownloadManager.download(URLManager.PACK, File("./PotatoCraft/modpack.zip").absolutePath)
                 DownloadManager.download(URLManager.getGithubUrl("version.json"),Paths.get(System.getProperty("user.dir"),"./PotatoCraft/PCL/","version.json").toFile().absolutePath)
             }
             Runtime.getRuntime().exec("./PotatoCraft/PCL.exe")
+            File("PCL.zip").delete()
         }
     }
 }
