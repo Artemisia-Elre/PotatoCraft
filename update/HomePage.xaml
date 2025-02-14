@@ -23,10 +23,21 @@
 
 
 <local:MyCard Title="PotatoCraft游戏启动" CanSwap="True" Margin="0,15,0,15" IsSwaped="False">
-    <StackPanel Margin="25,40,23,15" Orientation="Horizontal">
-        <local:MyButton Margin="0,4,10,0" Width="160" Height="35"
+    <Grid Margin="25,40,23,15">
+        <!-- 定义两列，第一列占据剩余空间，第二列按按钮宽度自适应 -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/> <!-- 让左侧按钮的列根据内容宽度调整 -->
+            <ColumnDefinition Width="*"/>  <!-- 让右侧按钮的列占据剩余空间 -->
+            <ColumnDefinition Width="Auto"/> <!-- 让右侧按钮的列根据内容宽度调整 -->
+        </Grid.ColumnDefinitions>
+
+        <!-- 左侧按钮，放置在第1列 -->
+        <local:MyButton Grid.Column="0" Margin="0,4,10,0" Width="160" Height="35"
                 Text="主要地址" EventType="启动游戏" EventData="PotatoCraft|ym.rainplay.cn:23983" ToolTip="服务器 IP: ym.rainplay.cn:23983" />
-        <local:MyButton Margin="130,4,0,0" Width="160" Height="35"
+
+        <!-- 右侧按钮，放置在第3列 -->
+        <local:MyButton Grid.Column="2" Margin="130,4,0,0" Width="160" Height="35"
                 Text="备用地址" EventType="启动游戏" EventData="PotatoCraft|ymt.rainplay.cn:23983" ToolTip="服务器 IP: ymt.rainplay.cn:23983" />
-    </StackPanel>
+    </Grid>
 </local:MyCard>
+

@@ -52,6 +52,7 @@ class Main {
 
         @JvmStatic
         fun main(args: Array<String>) {
+            File("./PotatoCraft/modpack.zip").delete()
             println("PotatoCraft Auto Updater")
             println("Starting up...")
             val version = getVersion()
@@ -66,12 +67,15 @@ class Main {
                 }.absolutePath)
             }
             if (version == null || internet.version != version) {
-                deleteFolderAndContents(File("./PotatoCraft/.minecraft/version/"))
+                deleteFolderAndContents(File("PotatoCraft/.minecraft/versions/"))
+                File("./PotatoCraft/PCL/version.json").delete()
+                File("./PotatoCraft/modpack.zip").delete()
                 DownloadManager.download(URLManager.PACK, File("./PotatoCraft/modpack.zip").absolutePath)
                 DownloadManager.download(URLManager.getGithubUrl("version.json"),Paths.get(System.getProperty("user.dir"),"./PotatoCraft/PCL/","version.json").toFile().absolutePath)
             }
             Runtime.getRuntime().exec("./PotatoCraft/PCL.exe")
             File("PCL.zip").delete()
+
         }
     }
 }
