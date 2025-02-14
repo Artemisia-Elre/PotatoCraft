@@ -27,6 +27,28 @@ class Main {
             } catch (_: Exception) { }
             return null
         }
+        private fun deleteFolderAndContents(folder: File) {
+            if (folder.isDirectory) {
+                val files = folder.listFiles()
+                files?.forEach {
+                    deleteFolderAndContents(it)
+                }
+            }
+            if (folder.delete()) {
+                println("Deleted: ${folder.absolutePath}")
+            } else {
+                println("Failed to delete: ${folder.absolutePath}")
+            }
+        }
+
+        fun deleteNonEmptyFolder(folderPath: String) {
+            val folder = File(folderPath)
+            if (folder.exists()) {
+                deleteFolderAndContents(folder)
+            } else {
+                println("Folder does not exist.")
+            }
+        }
 
         @JvmStatic
         fun main(args: Array<String>) {
@@ -44,6 +66,7 @@ class Main {
                 }.absolutePath)
             }
             if (version == null || internet.version != version) {
+                deleteFolderAndContents(File("./PotatoCraft/.minecraft/version/"))
                 DownloadManager.download(URLManager.PACK, File("./PotatoCraft/modpack.zip").absolutePath)
                 DownloadManager.download(URLManager.getGithubUrl("version.json"),Paths.get(System.getProperty("user.dir"),"./PotatoCraft/PCL/","version.json").toFile().absolutePath)
             }

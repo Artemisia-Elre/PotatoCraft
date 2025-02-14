@@ -25,8 +25,8 @@
 <local:MyCard Title="PotatoCraft游戏启动" CanSwap="True" Margin="0,15,0,15" IsSwaped="False">
     <StackPanel Margin="25,40,23,15" Orientation="Horizontal">
         <local:MyButton Margin="0,4,10,0" Width="160" Height="35"
-                Text="主要地址" EventType="启动游戏" EventData="1.20.1|ym.rainplay.cn:23983" ToolTip="服务器 IP: ym.rainplay.cn:23983" />
+                Text="主要地址" EventType="启动游戏" EventData="PotatoCraft|ym.rainplay.cn:23983" ToolTip="服务器 IP: ym.rainplay.cn:23983" />
         <local:MyButton Margin="130,4,0,0" Width="160" Height="35"
-                Text="备用地址" EventType="启动游戏" EventData="1.20.1|ymt.rainplay.cn:23983" ToolTip="服务器 IP: ymt.rainplay.cn:23983" />
+                Text="备用地址" EventType="启动游戏" EventData="PotatoCraft|ymt.rainplay.cn:23983" ToolTip="服务器 IP: ymt.rainplay.cn:23983" />
     </StackPanel>
 </local:MyCard>
