@@ -14,7 +14,10 @@ class Main {
         fun main(args: Array<String>) = runBlocking {
             println("PotatoCraft Auto Updater")
             println("Starting up...")
+            val mods = File("./mods/")
+            if (mods.exists() && !mods.isDirectory) {
 
+            }
         }
     }
 }
