@@ -1,15 +1,12 @@
 package net.artemisitor.server
 
 import com.google.gson.Gson
-import net.artemisitor.server.api.json.PackJson
 import net.artemisitor.server.api.manager.DownloadManager
 import net.artemisitor.server.api.manager.URLManager
-import java.io.File
-import kotlinx.coroutines.*
 import net.artemisitor.server.api.manager.ZipManager
-import java.io.IOException
+import java.io.File
 import java.nio.file.Paths
-import java.util.concurrent.Semaphore
+
 
 class Main {
     companion object {
@@ -36,8 +33,6 @@ class Main {
             }
             if (folder.delete()) {
                 println("Deleted: ${folder.absolutePath}")
-            } else {
-                println("Failed to delete: ${folder.absolutePath}")
             }
         }
 
@@ -52,6 +47,20 @@ class Main {
 
         @JvmStatic
         fun main(args: Array<String>) {
+            var hasFixOption = false
+
+            for (arg in args) {
+                if (arg == "--fix") {
+                    hasFixOption = true
+                    break
+                }
+            }
+
+            if (hasFixOption) {
+                File("./PotatoCraft/PCL/version.json").delete()
+            }
+
+
             File("./PotatoCraft/modpack.zip").delete()
             println("PotatoCraft Auto Updater")
             println("Starting up...")
