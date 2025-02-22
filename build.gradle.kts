@@ -42,7 +42,7 @@ tasks.withType<ShadowJar> {
     archiveClassifier.set("all")
     manifest {
         attributes(
-            "Premain-Class" to "net.artemisitor.server.MyAgent",
+            "Premain-Class" to "net.artemisitor.server.Main",
             "Main-Class" to application.mainClass
         )
     }
