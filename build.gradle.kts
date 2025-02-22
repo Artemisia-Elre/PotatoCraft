@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
 plugins {
     kotlin("jvm") version "2.0.20"
@@ -7,6 +8,8 @@ plugins {
 }
 
 group = "net.artemisitor.server"
+version = "1.0.0"
+
 repositories {
     maven("https://repo.huaweicloud.com/repository/maven/")
 }
@@ -22,13 +25,27 @@ dependencies {
     implementation("io.ktor:ktor-client-cio:2.3.12")
     testImplementation(kotlin("test"))
 }
-application{
+
+application {
     mainClass = "net.artemisitor.server.Main"
 }
 
 tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
 }
+
 tasks.withType<JavaExec> {
     systemProperty("file.encoding", "utf-8")
+}
+
+// 配置 Shadow JAR 任务
+tasks.withType<ShadowJar> {
+    archiveClassifier.set("all") // 设置生成的 JAR 文件的后缀
+    manifest {
+        attributes(
+            "Premain-Class" to "net.artemisitor.server.MyAgent", // 设置 Premain-Class
+            "Main-Class" to application.mainClass // 设置主类
+        )
+    }
+    mergeServiceFiles() // 合并服务文件（如果需要）
 }
