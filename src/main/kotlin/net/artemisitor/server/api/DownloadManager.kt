@@ -1,4 +1,4 @@
-package net.artemisitor.server.api.manager
+package net.artemisitor.server.api
 
 import okhttp3.*
 import io.ktor.client.*

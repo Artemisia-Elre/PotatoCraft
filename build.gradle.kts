@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     kotlin("jvm") version "2.0.20"
     id("com.github.johnrengelman.shadow") version "8.1.1"
@@ -26,4 +28,7 @@ application{
 
 tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
+}
+tasks.withType<JavaExec> {
+    systemProperty("file.encoding", "utf-8")
 }
