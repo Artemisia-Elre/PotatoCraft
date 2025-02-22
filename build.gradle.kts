@@ -40,12 +40,12 @@ tasks.withType<JavaExec> {
 
 // 配置 Shadow JAR 任务
 tasks.withType<ShadowJar> {
-    archiveClassifier.set("all") // 设置生成的 JAR 文件的后缀
+    archiveClassifier.set("all")
     manifest {
         attributes(
-            "Premain-Class" to "net.artemisitor.server.MyAgent", // 设置 Premain-Class
-            "Main-Class" to application.mainClass // 设置主类
+            "Premain-Class" to "net.artemisitor.server.MyAgent",
+            "Main-Class" to application.mainClass
         )
     }
-    mergeServiceFiles() // 合并服务文件（如果需要）
+    mergeServiceFiles()
 }
