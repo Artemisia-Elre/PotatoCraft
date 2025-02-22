@@ -38,7 +38,6 @@ tasks.withType<JavaExec> {
     systemProperty("file.encoding", "utf-8")
 }
 
-// 配置 Shadow JAR 任务
 tasks.withType<ShadowJar> {
     archiveClassifier.set("all")
     manifest {
